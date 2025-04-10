@@ -1,5 +1,4 @@
-import { Router } from "express";
-import { PetPost } from "../data/postgres/models/pet-post.model"; 
+import { Router } from "express"; 
 import { UserRoutes } from "./users/routes";
 import { PetPostsRoutes } from "./pet-posts/routes";
 

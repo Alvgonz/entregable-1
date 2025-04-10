@@ -1,7 +1,17 @@
-export class FinderUserService {
-    constructor() {}
+import { User } from "../../../data/postgres/models/user.model";
+
+export class FinderUsersService {
 
     async execute() {
-        return "finder user service works!";
+        try {
+            return await User.find({
+                select: ['id','name','email','role'],
+                where: {
+                    status: true,
+                }
+            })
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
     }
 }
